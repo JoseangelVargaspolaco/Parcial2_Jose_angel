@@ -16,27 +16,31 @@ public class Contexto : IdentityDbContext
         modelBuilder.Entity<Vitaminas>().HasData(
             new Vitaminas{
                 VitaminaId = 1,
-                Nombre ="Vitamina C",
+                Descripcion ="Vitamina C",
             },
             new Vitaminas{
                 VitaminaId = 2,
-                Nombre ="Betaína D",
+                Descripcion ="Betaína D",
+                Existencia = 0
             },
             new Vitaminas{
                 VitaminaId = 3,
-                Nombre ="Vitamina K",
+                Descripcion ="Vitamina K",
+                Existencia = 0
             },
             new Vitaminas{
                 VitaminaId = 4,
-               Nombre ="Vitamina B12",
+                Descripcion ="Vitamina B12",
             },
             new Vitaminas{
                 VitaminaId = 5,
-                Nombre ="Vitamina B6",
+                Descripcion ="Vitamina B6",
+                Existencia = 0
             }, 
             new Vitaminas{
                 VitaminaId = 6,
-                Nombre ="Acido fólico(B9)",
+                Descripcion ="Acido fólico(B9)",
+                Existencia = 0
             }  
         );
     }

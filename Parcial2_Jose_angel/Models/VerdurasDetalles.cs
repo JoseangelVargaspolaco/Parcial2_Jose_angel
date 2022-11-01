@@ -12,6 +12,13 @@ namespace Parcial2_Jose_angel.Models
         public double Cantidad { get; set; }
         public double Total { get; set; }
 
-    }
-   
+
+        // Nota: Para agregar el Vitaminas.Descripcion se iniciar 
+        // con la declaracion de un nuevo atributo con el nombre Descripcion para almacenar el dato
+        // o pasar los datos del Vitaminas.Descripcion al atributo creado.
+
+        // Entidad nueva
+        public string Descripcion { get; set; }
+        
+    }  
 }

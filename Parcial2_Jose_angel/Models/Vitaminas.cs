@@ -6,7 +6,7 @@ namespace Parcial2_Jose_angel.Models
     {
         [Key]
         public int VitaminaId { get; set; }
-        public string? Nombre { get; set; }
-
+        public string Descripcion { get; set; }
+        public double Existencia { get; set; }
     }
 }
