@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parcial2_Jose_angel.Data;
 
@@ -10,9 +11,10 @@ using Parcial2_Jose_angel.Data;
 namespace Parcial2_Jose_angel.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20221101120827_Verduras")]
+    partial class Verduras
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
@@ -223,11 +225,9 @@ namespace Parcial2_Jose_angel.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Observaciones")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("VerduraId");
@@ -241,15 +241,15 @@ namespace Parcial2_Jose_angel.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Total")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
 
                     b.Property<int>("VerduraId")
                         .HasColumnType("INTEGER");
@@ -274,8 +274,8 @@ namespace Parcial2_Jose_angel.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Existencia")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Existencia")
+                        .HasColumnType("REAL");
 
                     b.HasKey("VitaminaId");
 
@@ -286,37 +286,37 @@ namespace Parcial2_Jose_angel.Migrations
                         {
                             VitaminaId = 1,
                             Descripcion = "Vitamina C",
-                            Existencia = 0m
+                            Existencia = 0.0
                         },
                         new
                         {
                             VitaminaId = 2,
                             Descripcion = "Betaína D",
-                            Existencia = 0m
+                            Existencia = 0.0
                         },
                         new
                         {
                             VitaminaId = 3,
                             Descripcion = "Vitamina K",
-                            Existencia = 0m
+                            Existencia = 0.0
                         },
                         new
                         {
                             VitaminaId = 4,
                             Descripcion = "Vitamina B12",
-                            Existencia = 0m
+                            Existencia = 0.0
                         },
                         new
                         {
                             VitaminaId = 5,
                             Descripcion = "Vitamina B6",
-                            Existencia = 0m
+                            Existencia = 0.0
                         },
                         new
                         {
                             VitaminaId = 6,
                             Descripcion = "Acido fólico(B9)",
-                            Existencia = 0m
+                            Existencia = 0.0
                         });
                 });
 

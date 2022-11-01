@@ -9,8 +9,8 @@ namespace Parcial2_Jose_angel.Models
         public int Id { get; set; }
         public int VerduraId { get; set; }
         public int VitaminaId { get; set; }
-        public double Cantidad { get; set; }
-        public double Total { get; set; }
+        public decimal Cantidad { get; set; }
+        public decimal Total { get; set; }
 
 
         // Nota: Para agregar el Vitaminas.Descripcion se iniciar 

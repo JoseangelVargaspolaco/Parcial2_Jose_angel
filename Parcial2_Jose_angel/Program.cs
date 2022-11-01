@@ -6,8 +6,13 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Parcial2_Jose_angel.Areas.Identity;
 using Parcial2_Jose_angel.Data;
+using Parcial2_Jose_angel.BLL;
+using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<VitaminasBLL>();
+builder.Services.AddScoped<VerdurasBLL>();
+builder.Services.AddScoped<NotificationService>();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

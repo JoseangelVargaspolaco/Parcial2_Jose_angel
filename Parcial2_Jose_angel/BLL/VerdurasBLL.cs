@@ -1,7 +1,7 @@
-using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Parcial2_Jose_angel.Models;
 using Parcial2_Jose_angel.Data;
+using System.Linq.Expressions;
 
 namespace Parcial2_Jose_angel.BLL
 {
@@ -69,10 +69,9 @@ namespace Parcial2_Jose_angel.BLL
             }
 
             contexto_.Entry(verdura).State = EntityState.Modified;
-
-            var guardo = contexto_.SaveChanges() > 0;
             contexto_.Entry(verdura).State = EntityState.Detached;
-            return guardo;
+            
+            return contexto_.SaveChanges() > 0;
         }
         public bool Eliminar(Verduras verdura)
         {
@@ -99,9 +98,11 @@ namespace Parcial2_Jose_angel.BLL
             .AsNoTracking()
             .SingleOrDefault();
         }
-        public List<Verduras> GetVerduras()
+        public List<Verduras> GetVerduras(Expression<Func<Verduras, bool>> Criterio)
         {
-            return contexto_.Verduras.AsNoTracking().ToList();
+            return contexto_.Verduras
+            .AsNoTracking()
+            .ToList();
         }
     }
 }

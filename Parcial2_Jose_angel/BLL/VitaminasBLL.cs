@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Parcial2_Jose_angel.Models;
 using Parcial2_Jose_angel.Data;
+using System.Linq.Expressions;
 
 namespace Parcial2_Jose_angel.BLL
 {
@@ -20,17 +21,8 @@ namespace Parcial2_Jose_angel.BLL
                 .AsNoTracking()
                 .SingleOrDefault();
         }
-        public string GetDescripcion(int vitamina)
-        {
-            var vitaminas = _contexto.Vitaminas
-            .Where(c => c.VitaminaId == vitamina)
-            .AsNoTracking()
-            .SingleOrDefault();
 
-            return vitaminas!.Descripcion;
-        }
-
-        public List<Vitaminas> GetVitaminas()
+        public List<Vitaminas> GetVitaminas(Expression<Func<Vitaminas, bool>> Criterio)
         {
             return _contexto.Vitaminas
                 .AsNoTracking()
