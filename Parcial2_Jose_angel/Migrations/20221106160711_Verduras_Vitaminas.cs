@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Parcial2_Jose_angel.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Verduras_Vitaminas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -54,7 +54,9 @@ namespace Parcial2_Jose_angel.Migrations
                 {
                     VerduraId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", nullable: true)
+                    Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Nombre = table.Column<string>(type: "TEXT", nullable: false),
+                    Observaciones = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,7 +69,7 @@ namespace Parcial2_Jose_angel.Migrations
                 {
                     VitaminaId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", nullable: true)
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -188,8 +190,9 @@ namespace Parcial2_Jose_angel.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     VerduraId = table.Column<int>(type: "INTEGER", nullable: false),
                     VitaminaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Cantidad = table.Column<double>(type: "REAL", nullable: false),
-                    Total = table.Column<double>(type: "REAL", nullable: false)
+                    Cantidad = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Total = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -204,32 +207,32 @@ namespace Parcial2_Jose_angel.Migrations
 
             migrationBuilder.InsertData(
                 table: "Vitaminas",
-                columns: new[] { "VitaminaId", "Nombre" },
+                columns: new[] { "VitaminaId", "Descripcion" },
                 values: new object[] { 1, "Vitamina C" });
 
             migrationBuilder.InsertData(
                 table: "Vitaminas",
-                columns: new[] { "VitaminaId", "Nombre" },
+                columns: new[] { "VitaminaId", "Descripcion" },
                 values: new object[] { 2, "Betaína D" });
 
             migrationBuilder.InsertData(
                 table: "Vitaminas",
-                columns: new[] { "VitaminaId", "Nombre" },
+                columns: new[] { "VitaminaId", "Descripcion" },
                 values: new object[] { 3, "Vitamina K" });
 
             migrationBuilder.InsertData(
                 table: "Vitaminas",
-                columns: new[] { "VitaminaId", "Nombre" },
+                columns: new[] { "VitaminaId", "Descripcion" },
                 values: new object[] { 4, "Vitamina B12" });
 
             migrationBuilder.InsertData(
                 table: "Vitaminas",
-                columns: new[] { "VitaminaId", "Nombre" },
+                columns: new[] { "VitaminaId", "Descripcion" },
                 values: new object[] { 5, "Vitamina B6" });
 
             migrationBuilder.InsertData(
                 table: "Vitaminas",
-                columns: new[] { "VitaminaId", "Nombre" },
+                columns: new[] { "VitaminaId", "Descripcion" },
                 values: new object[] { 6, "Acido fólico(B9)" });
 
             migrationBuilder.CreateIndex(

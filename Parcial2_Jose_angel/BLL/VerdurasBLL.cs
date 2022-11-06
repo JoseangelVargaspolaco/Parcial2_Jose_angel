@@ -35,7 +35,6 @@ namespace Parcial2_Jose_angel.BLL
             foreach (var item in verdura.Detalle)
             {
                 var vitamina = contexto_.Vitaminas.Find(item.VitaminaId);
-                vitamina!.Existencia += item.Cantidad;
             }
             
             bool insertar = contexto_.SaveChanges() >0;
@@ -54,19 +53,9 @@ namespace Parcial2_Jose_angel.BLL
             foreach (var item in anterior!.Detalle)
             {
                 var vitamina = contexto_.Vitaminas.Find(item.VitaminaId);
-
-                vitamina!.Existencia -= item.Cantidad;
-            }        
-            contexto_.Database.ExecuteSqlRaw($"DELETE FROM VerdurasDetalle WHERE VerduraId={verdura.VerduraId};");
-
-            foreach (var item in verdura.Detalle)
-            {
-                var vitamina = contexto_.Vitaminas.Find(item.VitaminaId);
-                vitamina!.Existencia += item.Cantidad;
-                
-
                 contexto_.Entry(item).State = EntityState.Added;
-            }
+            }        
+            contexto_.Database.ExecuteSqlRaw($"DELETE FROM VerdurasDetalle WHERE VerduraId={verdura.VerduraId}");
 
             contexto_.Entry(verdura).State = EntityState.Modified;
             contexto_.Entry(verdura).State = EntityState.Detached;
@@ -80,8 +69,6 @@ namespace Parcial2_Jose_angel.BLL
             foreach (var item in verdura.Detalle)
             {
                 var vitamina = contexto_.Vitaminas.Find(item.VitaminaId);
-                vitamina!.Existencia -= item.Cantidad;
-                
             }
             contexto_.Entry(verdura).State = EntityState.Deleted;
 

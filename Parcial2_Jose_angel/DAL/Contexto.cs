@@ -21,12 +21,10 @@ public class Contexto : IdentityDbContext
             new Vitaminas{
                 VitaminaId = 2,
                 Descripcion ="Betaína D",
-                Existencia = 0
             },
             new Vitaminas{
                 VitaminaId = 3,
                 Descripcion ="Vitamina K",
-                Existencia = 0
             },
             new Vitaminas{
                 VitaminaId = 4,
@@ -35,12 +33,10 @@ public class Contexto : IdentityDbContext
             new Vitaminas{
                 VitaminaId = 5,
                 Descripcion ="Vitamina B6",
-                Existencia = 0
             }, 
             new Vitaminas{
                 VitaminaId = 6,
                 Descripcion ="Acido fólico(B9)",
-                Existencia = 0
             }  
         );
     }

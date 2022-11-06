@@ -274,9 +274,6 @@ namespace Parcial2_Jose_angel.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Existencia")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("VitaminaId");
 
                     b.ToTable("Vitaminas");
@@ -285,38 +282,32 @@ namespace Parcial2_Jose_angel.Migrations
                         new
                         {
                             VitaminaId = 1,
-                            Descripcion = "Vitamina C",
-                            Existencia = 0m
+                            Descripcion = "Vitamina C"
                         },
                         new
                         {
                             VitaminaId = 2,
-                            Descripcion = "Betaína D",
-                            Existencia = 0m
+                            Descripcion = "Betaína D"
                         },
                         new
                         {
                             VitaminaId = 3,
-                            Descripcion = "Vitamina K",
-                            Existencia = 0m
+                            Descripcion = "Vitamina K"
                         },
                         new
                         {
                             VitaminaId = 4,
-                            Descripcion = "Vitamina B12",
-                            Existencia = 0m
+                            Descripcion = "Vitamina B12"
                         },
                         new
                         {
                             VitaminaId = 5,
-                            Descripcion = "Vitamina B6",
-                            Existencia = 0m
+                            Descripcion = "Vitamina B6"
                         },
                         new
                         {
                             VitaminaId = 6,
-                            Descripcion = "Acido fólico(B9)",
-                            Existencia = 0m
+                            Descripcion = "Acido fólico(B9)"
                         });
                 });
 
